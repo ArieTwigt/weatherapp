@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arie's Weather Channel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+         <h1> Welcome to the weather channel</h1>
+          <form class="form-inline" method="POST" action="/" role="form">
+              <div class="form-group">
+                  <div class="input-group">
+                      <input name="city">
+                  </div>
+                  <button type="submit"> SELECT </button>
+              </div>
+           </form>
+      </div>
+  </div>
+    <div class="row">
+        <div class="col-md">
+           {% if city is not none %}
+            <p>Weather predictions for <b> {{ city | safe }} </b> </p>
+
+            {{ weatherdata | safe }}
+           {% endif %}
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
